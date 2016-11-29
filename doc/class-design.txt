@@ -18,6 +18,9 @@ Class Maze {
 
 
 class Player{
+    フィールド変数
+        int step;//歩数を格納する
+        
     メソッド
         ゴール地点を探す{
             迷路情報からサーチ
