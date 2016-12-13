@@ -9,7 +9,8 @@ import java.util.Scanner; // 標準入力読み込み
 public class Maze {
     private int player[] = new int[2];
     private int mapSize[] = new int[2];
-    List<String> listInformation = new ArrayList<>();
+    List<String> listInformation = new ArrayList<>();//一時的にマップを保存する
+    char board[][];//最終的なマップの二次元配列
 
     //コンストラクタ
     public Maze(String filename){
@@ -50,6 +51,18 @@ public class Maze {
 
         //Listを配列に変換
         String information[] = listInformation.toArray(new String [listInformation.size()]);
-        
+
+        board = new char[mapSize[1]][];
+        char part[];
+        part = new char[mapSize[0]];
+        //for (i=0)
+        //mapSize[0] = []
+        for (i=0; i<mapSize[1]; i++){
+            for (int j=0; j<mapSize[0]; j++){
+                part[j] = information[i].charAt(j);
+            }
+            board[i] = part;
+        }
     }
 }
+
